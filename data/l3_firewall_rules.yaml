@@ -1,0 +1,17 @@
+- comment: "Allow HTTP to external"
+  policy: allow
+  protocol: tcp
+  srcPort: any
+  srcCidr: any
+  destPort: 80
+  destCidr: 0.0.0.0/0
+  syslogEnabled: false
+
+- comment: "Allow HTTPS to external"
+  policy: allow
+  protocol: tcp
+  srcPort: any
+  srcCidr: any
+  destPort: 443
+  destCidr: 0.0.0.0/0
+  syslogEnabled: false

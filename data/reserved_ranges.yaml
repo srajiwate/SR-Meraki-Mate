@@ -1,0 +1,9 @@
+reserved_ranges:
+  - vlan_id: 10
+    start: "192.168.10.200"
+    end: "192.168.10.210"
+    comment: "For servers"
+  - vlan_id: 20
+    start: "192.168.20.100"
+    end: "192.168.20.105"
+    comment: "For VoIP"

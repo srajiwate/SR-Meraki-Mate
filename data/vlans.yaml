@@ -1,0 +1,9 @@
+vlans:
+  - id: 5
+    name: MGMT
+    subnet: 10.19.187.0/29
+    appliance_ip: 10.19.187.1
+  - id: 100
+    name: DATA
+    subnet: 10.19.30.0/24
+    appliance_ip: 10.19.30.1

@@ -1,0 +1,9 @@
+fixed_ips:
+  - vlan_id: 10
+    mac: "00:11:22:33:44:55"
+    ip: "192.168.10.50"
+    name: "Printer01"
+  - vlan_id: 20
+    mac: "00:11:22:AA:BB:CC"
+    ip: "192.168.20.51"
+    name: "Camera01"

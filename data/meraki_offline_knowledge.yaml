@@ -1,0 +1,460 @@
+  # Intrusion Detection
+  ids_start:
+    recommendation: >
+      Confirm IDS engine has started correctly and logs are populating. No action required unless accompanied by errors.
+  ids_error:
+    recommendation: >
+      Review IDS/IPS logs and Meraki dashboard for error details. Restart IDS services if necessary and check for firmware updates.
+  ids_update:
+    recommendation: >
+      Monitor rule update status. Validate IDS/IPS is applying the latest threat signatures. If errors occur, consult Meraki support.
+
+  # Status & Connectivity
+  carrier_event:
+    recommendation: >
+      Inspect physical cabling and link status. Resolve flapping by replacing cables or fixing port configurations.
+  events_dropped2:
+    recommendation: >
+      Increase log buffer size or offload events more frequently to prevent loss. Check for network congestion or appliance performance issues.
+  failover_event:
+    recommendation: >
+      Verify WAN link status and failover configuration. Troubleshoot ISP issues or hardware failures causing uplink changes.
+  client_connectivity:
+    recommendation: >
+      Investigate client device network connection, signal strength, and IP assignment. Validate related authentication or DHCP events.
+
+  # DHCPv4
+  dhcp_lease:
+    recommendation: >
+      Normal operation. If unexpected leases appear, check for rogue clients or IP conflicts.
+  dhcp_release:
+    recommendation: >
+      Usually normal. If frequent, check for client or lease timer misconfigurations.
+  dhcp_nak:
+    recommendation: >
+      Indicates address assignment refusal. Check for IP conflicts or rogue DHCP servers.
+  dhcp_problem:
+    recommendation: >
+      Review DHCP logs to determine scope. Verify that the DHCP server is up, reachable, and correctly configured.
+  multiple_dhcp_servers_detected:
+    recommendation: >
+      Check for unauthorized/rogue DHCP servers on the network. Remove or reconfigure as needed.
+  dhcp_no_leases:
+    recommendation: >
+      Increase lease pool, reduce lease time, or resolve address exhaustion causes.
+  rogue_dhcp:
+    recommendation: >
+      Identify and remove unauthorized DHCP servers from the network.
+  dhcp_blocked:
+    recommendation: >
+      Investigate the source of blocked offers. Ensure only legitimate DHCP servers are allowed.
+  mandatory_dhcp_drop:
+    recommendation: >
+      Confirm DHCP security features and policies are correct. Investigate causes for dropped offers or requests.
+
+  # DHCPv6
+  dhcp6pd_req_success:
+    recommendation: >
+      Confirm if DHCPv6 Prefix Delegation assignment aligns with network expectations.
+  dhcp6pd_req_fail:
+    recommendation: >
+      Check connectivity to upstream relay or prefix delegation config.
+  dhcp6pd_reb_success:
+    recommendation: >
+      Expected during lease renewal.
+  dhcp6pd_reb_fail:
+    recommendation: >
+      Investigate prefix delegation failures or communication issues.
+  dhcp6pd_ren_success:
+    recommendation: >
+      Routine operation; track for lease lifecycle events.
+  dhcp6pd_ren_fail:
+    recommendation: >
+      Troubleshoot communication with DHCPv6 server.
+  dhcp6pd_rel_success:
+    recommendation: >
+      Expected when address is released by client.
+  dhcp6pd_rel_fail:
+    recommendation: >
+      Investigate for server communication or config mismatches.
+  dhcp6pd_dec_success:
+    recommendation: >
+      Review for address conflicts.
+  dhcp6pd_dec_fail:
+    recommendation: >
+      Examine for persistent address conflicts.
+  dhcp6pd_renumber:
+    recommendation: >
+      Evaluate for renumbering policy or accidental readdressing.
+  dhcp6pd_no_more_leases:
+    recommendation: >
+      Expand the prefix range or reduce lease time.
+  dhcp6na_req_success:
+    recommendation: >
+      Normal operation.
+  dhcp6na_req_fail:
+    recommendation: >
+      Check network reachability and DHCPv6 server.
+  dhcp6na_reb_success:
+    recommendation: >
+      Normal event.
+  dhcp6na_reb_fail:
+    recommendation: >
+      Investigate server or client-side issue.
+  dhcp6na_ren_success:
+    recommendation: >
+      Part of standard lease management.
+  dhcp6na_ren_fail:
+    recommendation: >
+      Troubleshoot for potential client unreachable.
+  dhcp6na_rel_success:
+    recommendation: >
+      Expected during client disconnect.
+  dhcp6na_rel_fail:
+    recommendation: >
+      Ensure client-server communications are intact.
+  dhcp6na_dec_success:
+    recommendation: >
+      Monitor for address conflicts.
+  dhcp6na_dec_fail:
+    recommendation: >
+      Investigate for ongoing address conflicts.
+  dhcp6na_renumber:
+    recommendation: >
+      Ensure renumbering occurs within maintenance windows or as planned.
+  dhcp6na_no_more_leases:
+    recommendation: >
+      Increase address pool or adjust usage.
+
+  # Camera
+  heater:
+    recommendation: >
+      If unexpected, inspect camera placement and environment for extreme conditions. Verify hardware health.
+  night_mode:
+    recommendation: >
+      Normal infrared operation. If happening at incorrect times, check the schedule and light sensor calibration.
+  update_user_settings:
+    recommendation: >
+      Document changes for audit. Confirm new image settings yield desired video quality.
+  schedule_applied:
+    recommendation: >
+      Verify schedule matches surveillance requirements.
+  schedule_removed:
+    recommendation: >
+      Confirm if removal was intentional. Restore schedule if needed for compliance.
+  schedule_edited:
+    recommendation: >
+      Review the new schedule for accuracy. Confirm against organizational policy.
+  motion_alert_schedule_applied:
+    recommendation: >
+      Confirm alerting behavior aligns with monitoring needs.
+  motion_alert_schedule_removed:
+    recommendation: >
+      Evaluate if alerting is still required and add new schedule if necessary.
+  video_export_create:
+    recommendation: >
+      Ensure exports comply with privacy policies. Monitor and audit export activity.
+  video_export_delete:
+    recommendation: >
+      Confirm deletion was authorized as per data retention policy.
+  automated_training_export_create:
+    recommendation: >
+      Document purpose for audit. Ensure compliance with security standards.
+  custom_cv_model_inference_started:
+    recommendation: >
+      Normal for analytics workflows. If unexpected, investigate access logs and automation triggers.
+  custom_cv_model_inference_stopped:
+    recommendation: >
+      Normal operation unless correlated with errors or incomplete analysis.
+  custom_cv_model_inference_error:
+    recommendation: >
+      Check model logs for errors. Re-deploy or retrain model as needed.
+  custom_cv_model_inference_artifact:
+    recommendation: >
+      Confirm uploaded model artifact integrity and authenticity.
+  poe_power_error:
+    recommendation: >
+      PoE power error indicates an incorrect PoE standard. Check PoE switch compatibility and replace non-standard cables or injectors.
+  hardware_state_report:
+    recommendation: >
+      Review report for hardware faults or warnings.
+  short_night_mode_transition_block:
+    recommendation: >
+      May indicate light sensor instability; monitor if persistent.
+  long_night_mode_transition_block:
+    recommendation: >
+      Inspect daytime/nighttime settings and ensure physical environment is suitable.
+
+  # Radius Proxy
+  radius_proxy_start:
+    recommendation: >
+      Ensure Radius Proxy service has started properly. Check logs for startup errors.
+  radius_proxy_stopped:
+    recommendation: >
+      Determine why Radius Proxy stopped unexpectedly. Investigate system logs and service status.
+  radius_proxy_term:
+    recommendation: >
+      Analyze termination cause in logs, including crashes or administrative stops. Apply patches or configuration corrections as needed.
+  radius_proxy_hup:
+    recommendation: >
+      Confirm that configuration reload after SIGHUP signal succeeded without errors. Validate Radius Proxy operational state.
+  radius_proxy_homeserver_alive:
+    recommendation: >
+      Normal event indicating Radius server is reachable and available. Continue monitoring connection health.
+  radius_proxy_homeserver_dead:
+    recommendation: >
+      Investigate network connectivity between proxy and Radius server. Verify server status and firewall rules.
+  radius_proxy_homeserver_zombie:
+    recommendation: >
+      Check for network latency or server overload issues causing timeouts. Restart server or proxy if required.
+  radius_proxy_tls_handshake:
+    recommendation: >
+      Review TLS handshake logs for errors or certificate issues. Ensure valid certificates and correct server configuration.
+  radius_proxy_tls_success:
+    recommendation: >
+      No action needed. TLS handshake succeeded ensuring secure Radius communication.
+  radius_proxy_tls_fail:
+    recommendation: >
+      Troubleshoot certificate expiration, mismatches, or incompatible TLS versions. Renew or adjust certificates as needed.
+
+  # Authentication
+  splash_auth:
+    recommendation: >
+      Confirm captive portal is working and users are authenticating correctly.
+  ad_auth:
+    recommendation: >
+      Verify communication to Active Directory servers. Check credentials and domain controller availability.
+  ad_connect:
+    recommendation: >
+      Monitor connectivity status for domain controller; no action needed unless failures occur.
+  ad_failure:
+    recommendation: >
+      Investigate network/firewall connectivity, DNS resolution, and domain controller health.
+  open_auth_success:
+    recommendation: >
+      Monitor for expected open authentication events. Watch for rogue or unauthorized devices.
+
+  # RADIUS
+  radius_mac_auth:
+    recommendation: >
+      Monitor authentication requests and responses. Validate server health and logs for failures.
+  radius_mab_timeout:
+    recommendation: >
+      Investigate RADIUS server performance or network communication issues causing timeout.
+  radius_mac_auth_failover:
+    recommendation: >
+      Verify failover VLAN configurations and identify root cause of primary authentication failure.
+  radius_dynamic_vlan_assignment:
+    recommendation: >
+      Confirm VLAN assignments comply with network policy and troubleshoot issues.
+  radius_invalid_vlan_name:
+    recommendation: >
+      Update RADIUS server to use valid VLAN mappings recognized by Meraki devices.
+  radius_invalid_group_policy:
+    recommendation: >
+      Verify and configure proper group policies on the RADIUS server.
+
+  # IP Conflict
+  ip_conflict:
+    recommendation: >
+      Identify conflicting hosts and assign unique IP addresses. Audit DHCP scopes.
+  ip6_conflict:
+    recommendation: >
+      Investigate and resolve duplicate IPv6 address allocation.
+  martian_vlan:
+    recommendation: >
+      Review and correct VLAN tagging, routing, and interface configurations.
+  martian_src:
+    recommendation: >
+      Investigate malformed or unauthorized packets violating network policies.
+
+  # VPN
+  non_meraki_vpn:
+    recommendation: >
+      Verify IPsec settings, shared secrets, and peer reachability. Check phase 1/2 negotiation logs and NAT traversal.
+  non_meraki_vpn_healthcheck:
+    recommendation: >
+      Monitor VPN link health and troubleshoot peer device issues on failures.
+  client_vpn:
+    recommendation: >
+      Confirm VPN tunnel establishment and client authentication success.
+  client_vpn_connect_v2:
+    recommendation: >
+      Monitor VPN client connections for anomalies.
+  client_vpn_disconnect_v2:
+    recommendation: >
+      Analyze client disconnect reasons and logs.
+  client_vpn_address_pool_empty_v2:
+    recommendation: >
+      Increase VPN client IP pool or optimize lease timings.
+  l2tp_log:
+    recommendation: >
+      Validate VPN client authentication success or failures for L2TP.
+
+  meraki_vpn:
+    vpn_connectivity_change:
+      recommendation: >
+        Investigate VPN tunnel drops and reestablishment attempts.
+    vpn_hub_change:
+      recommendation: >
+        Ensure VPN hub assignments follow design and client routes are updated.
+    vpn_registry_change:
+      recommendation: >
+        Monitor registry for connectivity and consistency.
+    vpn_sl2:
+      recommendation: >
+        Track VPN tunnel states and troubleshoot as required.
+
+  # Wireless Events
+  association:
+    recommendation: >
+      Wireless client associated with AP. Check signal strength and roaming behavior.
+  disassociation:
+    recommendation: >
+      Client disconnected. Investigate frequent disassociations or roaming events.
+  authentication:
+    recommendation: >
+      Client attempted Wi-Fi authentication. Confirm success or analyze failures.
+  deauthentication:
+    recommendation: >
+      Client deauthenticated, could be roaming or security-related. Review policy and client behavior.
+  air_marshal_event:
+    recommendation: >
+      Wireless threat or rogue AP detected. Investigate and remediate unauthorized devices.
+  channel_switch:
+    recommendation: >
+      AP switched radio channel due to interference or DFS. Monitor for repeated switches.
+  rssi_low:
+    recommendation: >
+      Client signal strength is low. Investigate coverage and interference sources.
+  dfs_event:
+    recommendation: >
+      Radar or interference detected triggering DFS. Ensure compliance and troubleshoot environment.
+  ssid_spoofing:
+    recommendation: >
+      SSID spoofing attempt detected. Take steps to mitigate rogue APs.
+  packet_flood:
+    recommendation: >
+      Excessive packets detected, potential attack or faulty client. Investigate source device.
+  ap_rebooted:
+    recommendation: >
+      Access point rebooted. Check for scheduled maintenance or unexpected failures.
+  settings_changed:
+    recommendation: >
+      Wireless configuration changed. Review for unauthorized or accidental changes.
+
+  # Switch Port and Status
+  port_down:
+    recommendation: >
+      Switch port link went down. Check cables, connected devices, and port errors.
+  port_up:
+    recommendation: >
+      Switch port link came up. Verify device legitimacy.
+  switch_port_connected:
+    recommendation: >
+      Device connected to switch port. Confirm authorized connection.
+  switch_port_disconnected:
+    recommendation: >
+      Device disconnected from switch port. Check client or device status.
+  poe_budget_change:
+    recommendation: >
+      PoE budget changed. Verify power availability and consumption.
+  psu_insert:
+    recommendation: >
+      Power supply unit inserted. Confirm hardware health and redundancy.
+  psu_remove:
+    recommendation: >
+      Power supply unit removed. Check for redundancy or power issues.
+  psu_error:
+    recommendation: >
+      Power supply error. Investigate insertion/removal logs and hardware faults.
+  rps_avail:
+    recommendation: >
+      Redundant power supply availability updated. Monitor for power stability.
+  rps_backup:
+    recommendation: >
+      RPS backup event occurred. Verify backup power status.
+  temp_critical:
+    recommendation: >
+      High temperature detected on device. Check ventilation and cooling.
+  management_mode_change:
+    recommendation: >
+      Management mode altered. Confirm legitimacy and update policies accordingly.
+  stack_cable_state:
+    recommendation: >
+      Stack cable status changed. Check physical cable connections for stability.
+  stackpower_cable_state:
+    recommendation: >
+      StackPower cable status change. Validate power stacking redundancy.
+  config_fetched:
+    recommendation: >
+      Configuration update fetched. Review recent changes.
+  config_applied:
+    recommendation: >
+      Configuration changes applied. Verify functionality and performance post-update.
+  device_rebooted:
+    recommendation: >
+      Switch rebooted. Confirm scheduled maintenance or unexpected restarts.
+  memory_low:
+    recommendation: >
+      Device memory low. Monitor usage and address potential leaks.
+  diskspace_low:
+    recommendation: >
+      Device disk space low. Clean logs or expand storage if needed.
+
+  # Spanning Tree
+  stp_change:
+    recommendation: >
+      Spanning Tree topology changed. Investigate potential loops or unstable links.
+  stp_port_role_change:
+    recommendation: >
+      STP port role changed. Confirm network topology stability.
+  stp_bpdu_guard:
+    recommendation: >
+      BPDU guard triggered. Identify unauthorized switches or loops.
+  stp_root_guard:
+    recommendation: >
+      Root guard activated. Validate network root bridge configuration.
+  stp_loop_guard:
+    recommendation: >
+      Loop guard triggered. Investigate and correct network loops.
+
+  # Firewall and Content Filtering
+  fw_rule_block:
+    recommendation: >
+      Firewall rule blocked traffic. Verify rule correctness and business impact.
+  cf_block:
+    recommendation: >
+      Review content filter settings and consider whitelisting trusted URLs.
+      Verify if the blocked content is a false positive.
+  blocked_url:
+    recommendation: >
+      User attempted access to blocked URL. Review policies and user behavior.
+  dns_block:
+    recommendation: >
+      DNS request blocked due to content filtering. Ensure domain is not critical to business functions.
+  sf_url_block:
+    recommendation: >
+      Security filtered URL blocked. Investigate threat cause.
+  sf_binary_block:
+    recommendation: >
+      Security filtered file blocked. Analyze source and impact.
+
+  # Other
+  web_cache_started:
+    recommendation: >
+      Web caching service started. Monitor performance for expected operation.
+  web_cache_stopped:
+    recommendation: >
+      Web caching service stopped. Investigate cause and restart if necessary.
+  route_connection_change:
+    recommendation: >
+      Routing path or connection changed. Validate network topology.
+  network_test:
+    recommendation: >
+      Network test executed. Review results for diagnostics.
+  boot:
+    recommendation: >
+      Device booted. Confirm planned maintenance or analyze unexpected restarts.
+
+  # Supplementary events can be added similarly following this format.

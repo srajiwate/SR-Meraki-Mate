@@ -1,0 +1,22 @@
+dhcp_settings:
+  - vlan_id: 10
+    dhcpHandling: "Run a DHCP server"
+    applianceIp: "192.168.1.1"
+    subnet: "192.168.1.0/24"
+    dnsNameservers: "upstream_dns"
+    dhcpLeaseTime: "1 day"
+    reservedIpRanges:
+      - start: "192.168.1.100"
+        end: "192.168.1.150"
+        comment: "Reserved for printers"
+
+  - vlan_id: 20
+    dhcpHandling: "Run a DHCP server"
+    applianceIp: "192.168.20.1"
+    subnet: "192.168.20.0/24"
+    dnsNameservers: "opendns"
+    dhcpLeaseTime: "1 day"
+    reservedIpRanges:
+      - start: "192.168.20.100"
+        end: "192.168.20.200"
+        comment: "Voice devices"

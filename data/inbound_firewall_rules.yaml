@@ -1,0 +1,17 @@
+- comment: "Allow DNS from local network"
+  policy: allow
+  protocol: udp
+  srcPort: any
+  srcCidr: 192.168.1.0/24
+  destPort: 53
+  destCidr: any
+  syslogEnabled: false
+
+- comment: "Block Telnet"
+  policy: deny
+  protocol: tcp
+  srcPort: any
+  srcCidr: any
+  destPort: 23
+  destCidr: any
+  syslogEnabled: false
