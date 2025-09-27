@@ -1,0 +1,22 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environments
+venv/
+.env/
+.shared_env/
+
+# Output reports and logs
+output/
+*.log
+*.csv
+*.xlsx
+
+# Allow VPN exclusion input files
+!data/vpn_exclusion_input.xlsx
+!data/vpn_exclusion_removal_input.xlsx
+
+# Local secrets (never publish)
+user_vault_config.py
