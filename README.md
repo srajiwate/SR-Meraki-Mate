@@ -123,13 +123,15 @@ Release:        24.04
 git clone https://github.com/srajiwate/SR-Meraki-Mate.git
 cd SR-Meraki-Mate
 
-##🛠️ Prerequisites
+````
+### 🛠️ Prerequisites
 📦 Installation Requirements
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 
+````
 
 ## Usage
 
@@ -142,7 +144,6 @@ options:
   -h, --help       show this help message and exit
   --update-banner  Regenerate hashes (requires master password)
   --no-vault       Skip Azure Key Vault and prompt API key manually
-
 
 
 ##################
