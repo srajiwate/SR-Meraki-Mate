@@ -146,16 +146,15 @@ options:
 
 
 ##################
- Usage Examples 
+# Usage Examples #
 ##################
 
-# Step 1 : In first terminal
+# Step 1 : In terminal
 $ python3 main.py
 
 # Step 2 : Proceed by type y
 
 ```
-
 
 ## Demo
 
