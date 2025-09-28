@@ -167,5 +167,8 @@ $ python3 main.py
 
 <img width="548" height="305" alt="image" src="https://github.com/user-attachments/assets/661bda93-27e8-4681-88c6-d4d83605c16e" />
 
+🚀 If you have new ideas or feature requests, feel free to open an Issue or Pull Request — **contributions are always welcome!**
+
+
 
 
