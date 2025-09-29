@@ -131,8 +131,19 @@ python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 
-````
+```
+**Azure Login**
 
+az login 
+<img width="1322" height="130" alt="image" src="https://github.com/user-attachments/assets/34362c63-5ddb-43e4-9aad-164eb38eb9aa" />
+
+Enter the code which was displayed in terminal during command az login
+<img width="1432" height="802" alt="image" src="https://github.com/user-attachments/assets/3acfe1f5-a9ec-4fb9-9ac8-37c89e6f1346" />
+
+Post login you will see tenant information
+<img width="1905" height="471" alt="image" src="https://github.com/user-attachments/assets/692d14ff-113d-4077-a4fe-de189d927881" />
+
+`
 ## Usage
 
 ```bash
